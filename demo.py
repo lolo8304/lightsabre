@@ -25,8 +25,8 @@ ap.add_argument("-i", "--imagesFolder", required=False, default=None,
 	help="input images directory and pattern to load")
 ap.add_argument("-p", "--imagesPattern", required=False, default=None,
 	help="images pattern of name to load e.g. central*")
-ap.add_argument("-c", "--config", required=False, default="lightsabre",
-	help="configuration pipeline name - default axahack2018 - see hough_configuration.py")
+ap.add_argument("-c", "--config", required=False, default="trustmile",
+	help="configuration pipeline name - default trustmile - see hough_configuration.py")
 
 args = vars(ap.parse_args())
 
@@ -65,7 +65,8 @@ inputMode = None
 if (args["imagesFolder"]):
     inputMode = ImagesInput(args["imagesFolder"], args["imagesPattern"])
 else:
-    filename = "input/2019-01-25 07.33.58.mov"
+    #filename = "input/2019-01-25 07.33.58.mov"
+    filename = "input/2019-09-02 20.03.23.mov"
     if (args["video"] is not None):
         filename = args["video"]
     inputMode = VideoInput(filename)
